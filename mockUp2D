@@ -1,0 +1,54 @@
+//this code is broken
+using UnityEditor.Experimental.GraphView;
+using UnityEngine;
+
+public class controller : MonoBehaviour
+{
+[SerializeField] private float speed;
+[SerializeField]private  LayerMask groundLayer;
+[SerializeField]private  LayerMask wallLayer;
+private float wallJumpCooldown;
+private BoxCollider2D boxCollider;
+private Rigidbody2D body; 
+
+    private void Awake(){
+        body = GetComponent<Rigidbody2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
+   }
+
+ private void Update(){
+       //body.linearVelocity = new Vector2(Input.GetAxis("Horizontal")* speed,body.linearVelocity.y);
+       if(Input.GetKey(KeyCode.Space))
+            body.linearVelocity = new Vector2(body.linearVelocity.x, speed); 
+       
+       
+      
+
+       if(wallJumpCooldown < 0.2f){
+        Jump();
+        body.linearVelocity = new Vector2(Input.GetAxis("Horizontal")* speed,body.linearVelocity.y);
+
+        if(onWall()&& !isGrounded()){
+            body.gravityScale = 0;
+            body.linearVelocity = Vector2.zero;
+        }
+        else
+            body.gravityScale = 3;
+       }    else
+            wallJumpCooldown += Time.deltaTime;
+    } 
+private void Jump(){
+    body.linearVelocity = new Vector2(body.linearVelocity.x,speed);
+}   
+
+private bool isGrounded(){
+    RaycastHit2D raycastHit = Physics2D.BoxCast(
+        boxCollider.bounds.center,boxCollider.bounds.size,0,Vector2.down,0.1f,groundLayer);
+    return raycastHit.collider != null;
+}
+private bool onWall(){
+    RaycastHit2D raycastHit = Physics2D.BoxCast(
+        boxCollider.bounds.center,boxCollider.bounds.size,0,new Vector2(transform.localScale.x,0),0.1f,wallLayer);
+    return raycastHit.collider != null;
+}
+}
