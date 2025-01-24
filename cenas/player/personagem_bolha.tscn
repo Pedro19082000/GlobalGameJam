@@ -1,15 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://dropxapjavxpn"]
+[gd_scene load_steps=4 format=3 uid="uid://dropxapjavxpn"]
 
-[ext_resource type="Texture2D" uid="uid://dwovvdpnpy36n" path="res://icon.svg" id="1_otcit"]
+[ext_resource type="Texture2D" uid="uid://dwovvdpnpy36n" path="res://icon.svg" id="1_rwlr3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mn40x"]
 size = Vector2(127, 125)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_t6xj1"]
+radius = 155.013
+
+[node name="Corpo" type="RigidBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_otcit")
+texture = ExtResource("1_rwlr3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_mn40x")
+
+[node name="Raio_da_bolha" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Raio_da_bolha"]
+shape = SubResource("CircleShape2D_t6xj1")
