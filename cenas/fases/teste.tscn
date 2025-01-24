@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://8aji6bomf2mf"]
+
+[ext_resource type="Script" path="res://scripts/teste.gd" id="1_6h5q8"]
+[ext_resource type="PackedScene" uid="uid://dropxapjavxpn" path="res://cenas/player/personagem_bolha.tscn" id="1_ixvv6"]
+
+[node name="Teste" type="Node2D"]
+script = ExtResource("1_6h5q8")
+
+[node name="Corpo" parent="." instance=ExtResource("1_ixvv6")]
+visible = false
+position = Vector2(532, 342)
