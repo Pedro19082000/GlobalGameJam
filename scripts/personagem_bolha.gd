@@ -18,6 +18,19 @@ func _process(delta: float):
 		pessoas_incial = PlayerVariaveis.pessoas
 		aumentar()
 	
+	if Input.is_action_just_pressed("diminuir") and entrou == true and PlayerVariaveis.pessoas > 0:
+		diminuir()
+	
+
+func diminuir():
+	if $Sprite2D.scale == Vector2(1,1):
+		return
+	$CollisionShape2D.scale = Vector2(-1, -1) + $CollisionShape2D.scale 
+	$Raio_da_bolha.scale = Vector2(-0.5,-0.5) + $Raio_da_bolha.scale 
+	$Sprite2D.scale =  Vector2(-1, -1) + $Sprite2D.scale
+	
+	pessoas_incial = PlayerVariaveis.pessoas
+
 
 func aumentar():
 	$CollisionShape2D.scale = $CollisionShape2D.scale + Vector2(1, 1)

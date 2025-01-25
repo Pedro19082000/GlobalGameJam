@@ -59,3 +59,6 @@ wind_force = 2.5
 position = Vector2(354, 467)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_75wsm")]
+
+[node name="Area2D2" parent="." instance=ExtResource("4_7pj8c")]
+position = Vector2(346, 116)

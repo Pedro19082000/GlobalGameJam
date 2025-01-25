@@ -11,9 +11,9 @@ func _process(delta):
 	var mouse_position = get_viewport().get_mouse_position()
 	var direction = (mouse_position - PlayerVariaveis.coords).normalized()
 	
-	print(direction)
+	#print(direction)
 	var angulo = atan2(direction.x, direction.y)
-	print(angulo)
+	#print(angulo)
 	#var angle = direction.angle()
 	
 	
