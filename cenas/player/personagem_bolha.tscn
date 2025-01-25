@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dropxapjavxpn"]
+[gd_scene load_steps=6 format=3 uid="uid://dropxapjavxpn"]
 
 [ext_resource type="Texture2D" uid="uid://dwovvdpnpy36n" path="res://icon.svg" id="1_a03el"]
 [ext_resource type="Script" path="res://scripts/personagem_bolha.gd" id="1_j0jvb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qtrmi"]
+bounce = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mn40x"]
 size = Vector2(127, 125)
@@ -9,7 +12,8 @@ size = Vector2(127, 125)
 [sub_resource type="CircleShape2D" id="CircleShape2D_t6xj1"]
 radius = 155.013
 
-[node name="Corpo" type="RigidBody2D" groups=["player"]]
+[node name="bolha_personagem" type="RigidBody2D" groups=["player"]]
+physics_material_override = SubResource("PhysicsMaterial_qtrmi")
 script = ExtResource("1_j0jvb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

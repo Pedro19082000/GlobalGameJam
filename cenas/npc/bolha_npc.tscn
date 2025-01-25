@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckdcryn4q8reu"]
+[gd_scene load_steps=4 format=3 uid="uid://vplfpvurixvh"]
 
 [ext_resource type="Script" path="res://scripts/bolha_pessoa.gd" id="1_dqinb"]
 [ext_resource type="Texture2D" uid="uid://dwovvdpnpy36n" path="res://icon.svg" id="2_vnusy"]
