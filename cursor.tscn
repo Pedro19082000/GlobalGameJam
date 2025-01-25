@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bolx6l6h51p7x"]
+
+[ext_resource type="Script" path="res://cursor.gd" id="1_idog6"]
+[ext_resource type="Texture2D" uid="uid://bsufcjngmn3a2" path="res://empty.png" id="2_eioc7"]
+[ext_resource type="Texture2D" uid="uid://5djxf3r4heu8" path="res://mikuC.png" id="3_wimgr"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_idog6")
+empty_cursor = ExtResource("2_eioc7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(38.75, 4.375)
+scale = Vector2(0.24671, 0.243143)
+texture = ExtResource("3_wimgr")
+centered = false

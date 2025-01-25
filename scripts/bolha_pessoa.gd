@@ -11,3 +11,4 @@ func on_body_entered(body : RigidBody2D) -> void:
 	
 	print("collect")
 	PlayerVariaveis.pessoas += 1
+	queue_free()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://8aji6bomf2mf"]
+[gd_scene load_steps=7 format=3 uid="uid://8aji6bomf2mf"]
 
 [ext_resource type="Script" path="res://scripts/teste.gd" id="1_6h5q8"]
 [ext_resource type="PackedScene" uid="uid://dropxapjavxpn" path="res://cenas/player/personagem_bolha.tscn" id="1_ixvv6"]
 [ext_resource type="PackedScene" uid="uid://cfr8cdram270l" path="res://cenas/npc/bolha_pessoa.tscn" id="3_4f82t"]
+[ext_resource type="PackedScene" uid="uid://bolx6l6h51p7x" path="res://cursor.tscn" id="4_0bm6u"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ybxbv"]
 
@@ -47,3 +48,5 @@ offset_left = 1031.0
 offset_top = 3.0
 offset_right = 1130.0
 offset_bottom = 101.0
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_0bm6u")]
