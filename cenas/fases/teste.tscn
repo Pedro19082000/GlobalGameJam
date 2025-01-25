@@ -17,7 +17,7 @@ size = Vector2(134, 204)
 script = ExtResource("1_6h5q8")
 
 [node name="Corpo" parent="." instance=ExtResource("1_ixvv6")]
-position = Vector2(511, 328)
+position = Vector2(570, 331)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(72, 39)
@@ -57,3 +57,8 @@ shape = SubResource("RectangleShape2D_i238j")
 
 [connection signal="body_exited" from="turbina/Area2D" to="turbina" method="_on_area_2d_body_exited"]
 [connection signal="body_shape_entered" from="turbina/Area2D" to="turbina" method="_on_area_2d_body_shape_entered"]
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 1031.0
+offset_top = 3.0
+offset_right = 1130.0
+offset_bottom = 101.0
