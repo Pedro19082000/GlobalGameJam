@@ -1,16 +1,31 @@
-extends RigidBody2D
+extends Node2D
 
+var teste = Vector2(0, 0)
+var velocidade = -0.02
+
+var entrou = false
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(delta: float):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and entrou == true:
+		assoprar()
+		
+
+func assoprar():
+	var mouse = get_viewport( ).get_mouse_position()
+	var player = $".".position
+	var resultado =  mouse - player
+	var vetor = resultado * velocidade
+	$".".apply_central_impulse(vetor)
+
+	
 
 
 func _on_raio_da_bolha_mouse_entered() -> void:
-	var mouse = get_viewport().get_mouse_position()
-	print(mouse)
+	entrou = true
+
+
+func _on_raio_da_bolha_mouse_exited() -> void:
+	entrou = false
