@@ -17,7 +17,7 @@ func _process(delta):
 	#var angle = direction.angle()
 	
 	
-	$Sprite2D.rotation = -angulo
+	$Sprite2D.rotation = -angulo + -300
 
 	
 	$Sprite2D.global_position = Vector2(mouse_position.x, mouse_position.y)

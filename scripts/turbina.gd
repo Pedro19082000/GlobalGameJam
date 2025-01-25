@@ -1,13 +1,16 @@
 extends StaticBody2D
 
 @export var wind_force: float = 5
+@export var distancia = 5
+
 @onready var area = $Area2D
 
 var player = 0
 
 # Called when the node enters the scene tree for the first time.
 
-var entrou = false
+var entrou = false	
+
 
 func _process(delta: float) -> void:
 	if entrou == true:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8aji6bomf2mf"]
+[gd_scene load_steps=10 format=3 uid="uid://8aji6bomf2mf"]
 
 [ext_resource type="Script" path="res://scripts/teste.gd" id="1_6h5q8"]
 [ext_resource type="PackedScene" uid="uid://dropxapjavxpn" path="res://cenas/player/personagem_bolha.tscn" id="1_ixvv6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cav6ujhuni7ew" path="res://cenas/obstaculos/turbina.tscn" id="4_6g7sh"]
 [ext_resource type="PackedScene" uid="uid://vplfpvurixvh" path="res://cenas/npc/bolha_npc.tscn" id="4_7pj8c"]
 [ext_resource type="PackedScene" uid="uid://bolx6l6h51p7x" path="res://cursor.tscn" id="6_75wsm"]
+[ext_resource type="PackedScene" uid="uid://n7bkhn2okikk" path="res://cenas/obstaculos/espinho.tscn" id="7_t067j"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ybxbv"]
 
@@ -19,7 +20,7 @@ script = ExtResource("1_6h5q8")
 position = Vector2(592, 288)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(72, 39)
+position = Vector2(92, 27)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(52.625, 31.625)
@@ -31,7 +32,7 @@ position = Vector2(53.5, 31.5)
 shape = SubResource("RectangleShape2D_lu5ub")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D"]
-position = Vector2(594, 8)
+position = Vector2(769, -8)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/StaticBody2D"]
 position = Vector2(52.625, 31.625)
@@ -39,6 +40,18 @@ scale = Vector2(148.75, 98.75)
 texture = SubResource("PlaceholderTexture2D_ybxbv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D"]
+position = Vector2(53.5, 31.5)
+shape = SubResource("RectangleShape2D_lu5ub")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="StaticBody2D"]
+position = Vector2(-81, 581)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/StaticBody2D2"]
+position = Vector2(52.625, 31.625)
+scale = Vector2(148.75, 98.75)
+texture = SubResource("PlaceholderTexture2D_ybxbv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D2"]
 position = Vector2(53.5, 31.5)
 shape = SubResource("RectangleShape2D_lu5ub")
 
@@ -52,7 +65,7 @@ offset_right = 1130.0
 offset_bottom = 101.0
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("4_6g7sh")]
-position = Vector2(906, 220)
+position = Vector2(907, 219)
 wind_force = 2.5
 
 [node name="Area2D" parent="." instance=ExtResource("4_7pj8c")]
@@ -62,3 +75,6 @@ position = Vector2(354, 467)
 
 [node name="Area2D2" parent="." instance=ExtResource("4_7pj8c")]
 position = Vector2(346, 116)
+
+[node name="Area2D3" parent="." instance=ExtResource("7_t067j")]
+position = Vector2(679, 788)

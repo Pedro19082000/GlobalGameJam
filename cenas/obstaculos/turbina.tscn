@@ -1,14 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://cav6ujhuni7ew"]
 
 [ext_resource type="Script" path="res://scripts/turbina.gd" id="1_4epud"]
+[ext_resource type="Texture2D" uid="uid://cq23s6d6jjs04" path="res://assets/obstaculos/ventilador.png" id="2_vb3lo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16qyx"]
-size = Vector2(160, 195)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s1ibi"]
+size = Vector2(160, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xmhl"]
-size = Vector2(160, 87)
+size = Vector2(160, 144.25)
 
 [node name="Turbina" type="StaticBody2D"]
 script = ExtResource("1_4epud")
@@ -16,15 +15,16 @@ script = ExtResource("1_4epud")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 140.5)
+position = Vector2(1, 144)
 shape = SubResource("RectangleShape2D_16qyx")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(160, 87)
-texture = SubResource("PlaceholderTexture2D_s1ibi")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -36.875)
 shape = SubResource("RectangleShape2D_3xmhl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 7)
+texture = ExtResource("2_vb3lo")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

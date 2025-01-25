@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://dropxapjavxpn"]
 
-[ext_resource type="Texture2D" uid="uid://dwovvdpnpy36n" path="res://icon.svg" id="1_a03el"]
 [ext_resource type="Script" path="res://scripts/personagem_bolha.gd" id="1_j0jvb"]
+[ext_resource type="Texture2D" uid="uid://dh8ybl0n7n0dc" path="res://assets/characters/Ilustração_Sem_Título.png" id="2_0kb2w"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qtrmi"]
 bounce = 0.5
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mn40x"]
-size = Vector2(127, 125)
+[sub_resource type="CircleShape2D" id="CircleShape2D_narh2"]
+radius = 61.5081
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t6xj1"]
 radius = 282.044
@@ -17,15 +17,19 @@ physics_material_override = SubResource("PhysicsMaterial_qtrmi")
 script = ExtResource("1_j0jvb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_a03el")
+position = Vector2(5, -2)
+scale = Vector2(0.0709524, 0.0706229)
+texture = ExtResource("2_0kb2w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_mn40x")
+shape = SubResource("CircleShape2D_narh2")
 
 [node name="Raio_da_bolha" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raio_da_bolha"]
+visible = false
 shape = SubResource("CircleShape2D_t6xj1")
 
 [connection signal="mouse_entered" from="Raio_da_bolha" to="." method="_on_raio_da_bolha_mouse_entered"]

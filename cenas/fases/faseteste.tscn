@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b13sfctjyg45t"]
+
+[ext_resource type="Script" path="res://scripts/fases/faseteste.gd" id="1_dg1rg"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_dg1rg")
