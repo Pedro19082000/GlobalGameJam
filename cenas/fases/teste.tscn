@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://8aji6bomf2mf"]
+[gd_scene load_steps=8 format=3 uid="uid://8aji6bomf2mf"]
 
 [ext_resource type="Script" path="res://scripts/teste.gd" id="1_6h5q8"]
 [ext_resource type="PackedScene" uid="uid://dropxapjavxpn" path="res://cenas/player/personagem_bolha.tscn" id="1_ixvv6"]
 [ext_resource type="PackedScene" uid="uid://8u6tccdb5rf2" path="res://cenas/npc/bolha_pessoa.tscn" id="3_4f82t"]
+[ext_resource type="Script" path="res://cenas/fases/turbina.gd" id="4_ykkw2"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ybxbv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu5ub"]
 size = Vector2(153, 97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i238j"]
+size = Vector2(134, 204)
 
 [node name="Teste" type="Node2D"]
 script = ExtResource("1_6h5q8")
@@ -42,6 +46,17 @@ shape = SubResource("RectangleShape2D_lu5ub")
 [node name="Area_Bolha" parent="." instance=ExtResource("3_4f82t")]
 position = Vector2(114, 345)
 
+[node name="turbina" type="Node2D" parent="."]
+script = ExtResource("4_ykkw2")
+
+[node name="Area2D" type="Area2D" parent="turbina"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="turbina/Area2D"]
+position = Vector2(510, 324)
+shape = SubResource("RectangleShape2D_i238j")
+
+[connection signal="body_exited" from="turbina/Area2D" to="turbina" method="_on_area_2d_body_exited"]
+[connection signal="body_shape_entered" from="turbina/Area2D" to="turbina" method="_on_area_2d_body_shape_entered"]
 [node name="TextEdit" type="TextEdit" parent="."]
 offset_left = 1031.0
 offset_top = 3.0
