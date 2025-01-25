@@ -2,6 +2,6 @@ extends Node2D
 
 var teste = Vector2(0, 0)
 
-# Called when the node enters the scene tree for the first time.
-
+func _process(delta: float) -> void:
+	$TextEdit.text = "Pessoas: %d" % PlayerVariaveis.pessoas
 	
