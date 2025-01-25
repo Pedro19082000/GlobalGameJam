@@ -1,5 +1,6 @@
 extends Area2D
 
+
 func _ready():
 	connect("body_entered", on_body_entered)
 	
@@ -9,4 +10,4 @@ func on_body_entered(body : RigidBody2D) -> void:
 		return
 	
 	print("collect")
-	
+	PlayerVariaveis.pessoas += 1
