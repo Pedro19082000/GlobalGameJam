@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dropxapjavxpn" path="res://cenas/player/personagem_bolha.tscn" id="1_ixvv6"]
 [ext_resource type="PackedScene" uid="uid://cfr8cdram270l" path="res://cenas/npc/bolha_pessoa.tscn" id="3_4f82t"]
 [ext_resource type="PackedScene" uid="uid://cav6ujhuni7ew" path="res://cenas/obstaculos/turbina.tscn" id="4_6g7sh"]
-[ext_resource type="PackedScene" uid="uid://ckdcryn4q8reu" path="res://cenas/npc/bolha_npc.tscn" id="4_7pj8c"]
+[ext_resource type="PackedScene" uid="uid://vplfpvurixvh" path="res://cenas/npc/bolha_npc.tscn" id="4_7pj8c"]
 [ext_resource type="PackedScene" uid="uid://bolx6l6h51p7x" path="res://cursor.tscn" id="6_75wsm"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ybxbv"]
@@ -53,6 +53,7 @@ offset_bottom = 101.0
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("4_6g7sh")]
 position = Vector2(906, 220)
+wind_force = 2.5
 
 [node name="Area2D" parent="." instance=ExtResource("4_7pj8c")]
 position = Vector2(354, 467)
