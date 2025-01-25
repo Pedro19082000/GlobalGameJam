@@ -1,10 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://8aji6bomf2mf"]
+[gd_scene load_steps=6 format=3 uid="uid://8aji6bomf2mf"]
 
 [ext_resource type="Script" path="res://scripts/teste.gd" id="1_6h5q8"]
 [ext_resource type="PackedScene" uid="uid://dropxapjavxpn" path="res://cenas/player/personagem_bolha.tscn" id="1_ixvv6"]
+[ext_resource type="PackedScene" uid="uid://8u6tccdb5rf2" path="res://cenas/npc/bolha_pessoa.tscn" id="3_4f82t"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ybxbv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu5ub"]
+size = Vector2(153, 97)
 
 [node name="Teste" type="Node2D"]
 script = ExtResource("1_6h5q8")
 
 [node name="Corpo" parent="." instance=ExtResource("1_ixvv6")]
-position = Vector2(532, 342)
+position = Vector2(511, 328)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(72, 39)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(52.625, 31.625)
+scale = Vector2(148.75, 98.75)
+texture = SubResource("PlaceholderTexture2D_ybxbv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(53.5, 31.5)
+shape = SubResource("RectangleShape2D_lu5ub")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D"]
+position = Vector2(594, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/StaticBody2D"]
+position = Vector2(52.625, 31.625)
+scale = Vector2(148.75, 98.75)
+texture = SubResource("PlaceholderTexture2D_ybxbv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D"]
+position = Vector2(53.5, 31.5)
+shape = SubResource("RectangleShape2D_lu5ub")
+
+[node name="Area_Bolha" parent="." instance=ExtResource("3_4f82t")]
+position = Vector2(114, 345)
