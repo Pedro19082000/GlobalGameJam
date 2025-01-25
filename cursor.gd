@@ -8,4 +8,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Sprite2D.global_position = $Sprite2D.get_global_mouse_position()
+	var mouse_position = get_viewport().get_mouse_position()
+	var direction = (mouse_position - PlayerVariaveis.coords).normalized()
+	
+	print(direction)
+	var angulo = atan2(direction.x, direction.y)
+	print(angulo)
+	#var angle = direction.angle()
+	
+	
+	$Sprite2D.rotation = -angulo
+
+	
+	$Sprite2D.global_position = Vector2(mouse_position.x, mouse_position.y)

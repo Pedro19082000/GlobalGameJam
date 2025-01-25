@@ -10,6 +10,7 @@ var entrou = false
 func _process(delta: float):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and entrou == true:
 		assoprar()
+	PlayerVariaveis.coords = $".".position
 
 func assoprar():
 	var mouse = get_viewport( ).get_mouse_position()
