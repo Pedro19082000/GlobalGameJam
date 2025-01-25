@@ -11,10 +11,9 @@ config_version=5
 [application]
 
 config/name="gamejam2025"
-run/main_scene="res://cenas/fases/teste.tscn"
+run/main_scene="res://node_2d.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
 
 [physics]
 
-2d/default_gravity_vector=Vector2(0, 0)
+2d/default_gravity=0.0
