@@ -2,6 +2,7 @@ extends Node2D
 
 var teste = Vector2(0, 0)
 var velocidade = -0.05
+var vetor = 0
 
 var entrou = false
 # Called when the node enters the scene tree for the first time.
@@ -15,8 +16,10 @@ func assoprar():
 	var mouse = get_viewport( ).get_mouse_position()
 	var player = $".".position
 	var resultado =  mouse - player
-	var vetor = resultado * velocidade
+	vetor = resultado * velocidade
 	$".".apply_central_impulse(vetor)
+
+
 
 func _on_raio_da_bolha_mouse_entered() -> void:
 	entrou = true
