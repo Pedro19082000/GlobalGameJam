@@ -10,7 +10,7 @@ bounce = 0.5
 size = Vector2(127, 125)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t6xj1"]
-radius = 155.013
+radius = 282.044
 
 [node name="bolha_personagem" type="RigidBody2D" groups=["player"]]
 physics_material_override = SubResource("PhysicsMaterial_qtrmi")
