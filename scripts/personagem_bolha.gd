@@ -27,7 +27,7 @@ func diminuir():
 		return
 	$CollisionShape2D.scale = Vector2(-1, -1) + $CollisionShape2D.scale 
 	$Raio_da_bolha.scale = Vector2(-0.5,-0.5) + $Raio_da_bolha.scale 
-	$Sprite2D.scale =  Vector2(-1, -1) + $Sprite2D.scale
+	$Bolha.scale =  Vector2(-1, -1) + $Bolha.scale
 	
 	pessoas_incial = PlayerVariaveis.pessoas
 
@@ -35,7 +35,7 @@ func diminuir():
 func aumentar():
 	$CollisionShape2D.scale = $CollisionShape2D.scale + Vector2(1, 1)
 	$Raio_da_bolha.scale = $Raio_da_bolha.scale + Vector2(0.5,0.5)
-	$Sprite2D.scale = $Sprite2D.scale + Vector2(1, 1)
+	$Bolha.scale = $Bolha.scale + Vector2(1, 1)
 func assoprar():
 	var mouse = get_viewport( ).get_mouse_position()
 	var player = $".".position

@@ -1,18 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://vplfpvurixvh"]
 
 [ext_resource type="Script" path="res://scripts/bolha_pessoa.gd" id="1_dqinb"]
-[ext_resource type="Texture2D" uid="uid://dwovvdpnpy36n" path="res://icon.svg" id="2_vnusy"]
+[ext_resource type="Texture2D" uid="uid://dymmcocobqo7u" path="res://assets/characters/Ilustração_Sem_Título(1).png" id="3_gwb8n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l2cyx"]
 radius = 109.018
 
-[node name="Area2D" type="Area2D"]
+[node name="Bolha_npc" type="Area2D"]
 script = ExtResource("1_dqinb")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_vnusy")
+[node name="Bolha" type="Sprite2D" parent="."]
+position = Vector2(5, -3)
+scale = Vector2(0.0756394, 0.0753283)
+texture = ExtResource("3_gwb8n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_l2cyx")
+
+[node name="Personagem" type="Sprite2D" parent="."]
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(0.0578971, 0.0646867)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

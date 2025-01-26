@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqv8yww6l4lvx"]
+
+[ext_resource type="Texture2D" uid="uid://byflwoh2etsdn" path="res://assets/bg/bg_building_B_0.png" id="1_wnidt"]
+
+[node name="Prédio_Bg_azul" type="Sprite2D"]
+texture = ExtResource("1_wnidt")

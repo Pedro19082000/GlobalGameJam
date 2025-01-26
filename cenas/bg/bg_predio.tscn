@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfbuqoito5rp7"]
+
+[ext_resource type="Texture2D" uid="uid://bj7f1p06leej" path="res://assets/bg/bg_building_A_0.png" id="1_cl8lg"]
+
+[node name="Predio_bg_cinza" type="Sprite2D"]
+texture = ExtResource("1_cl8lg")

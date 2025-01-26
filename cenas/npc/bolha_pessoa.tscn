@@ -1,13 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfr8cdram270l"]
+[gd_scene load_steps=3 format=3 uid="uid://b0j5i58o1ekxd"]
 
 [ext_resource type="Texture2D" uid="uid://dwovvdpnpy36n" path="res://icon.svg" id="1_gsquu"]
-[ext_resource type="Script" path="res://scripts/bolha_pessoa.gd" id="1_sq7td"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ivad"]
 radius = 108.167
 
 [node name="Bolha_pessoa" type="Area2D"]
-script = ExtResource("1_sq7td")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_gsquu")

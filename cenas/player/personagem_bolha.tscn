@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dropxapjavxpn"]
+[gd_scene load_steps=7 format=3 uid="uid://dropxapjavxpn"]
 
 [ext_resource type="Script" path="res://scripts/personagem_bolha.gd" id="1_j0jvb"]
-[ext_resource type="Texture2D" uid="uid://dh8ybl0n7n0dc" path="res://assets/characters/Ilustração_Sem_Título.png" id="2_0kb2w"]
+[ext_resource type="Texture2D" uid="uid://dymmcocobqo7u" path="res://assets/characters/Ilustração_Sem_Título(1).png" id="2_e00cm"]
+[ext_resource type="Texture2D" uid="uid://2bs522x67nl4" path="res://assets/characters/Ilustração_Sem_Título(2).png" id="3_rhmen"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qtrmi"]
 bounce = 0.5
@@ -16,20 +17,23 @@ radius = 282.044
 physics_material_override = SubResource("PhysicsMaterial_qtrmi")
 script = ExtResource("1_j0jvb")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Bolha" type="Sprite2D" parent="."]
 position = Vector2(5, -2)
 scale = Vector2(0.0709524, 0.0706229)
-texture = ExtResource("2_0kb2w")
+texture = ExtResource("2_e00cm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-0.5, 0)
 shape = SubResource("CircleShape2D_narh2")
+
+[node name="Pato" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, -1.07288e-06)
+scale = Vector2(0.0506592, 0.0506592)
+texture = ExtResource("3_rhmen")
 
 [node name="Raio_da_bolha" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raio_da_bolha"]
-visible = false
 shape = SubResource("CircleShape2D_t6xj1")
 
 [connection signal="mouse_entered" from="Raio_da_bolha" to="." method="_on_raio_da_bolha_mouse_entered"]

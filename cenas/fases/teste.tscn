@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://8aji6bomf2mf"]
+[gd_scene load_steps=12 format=3 uid="uid://8aji6bomf2mf"]
 
 [ext_resource type="Script" path="res://scripts/teste.gd" id="1_6h5q8"]
 [ext_resource type="PackedScene" uid="uid://dropxapjavxpn" path="res://cenas/player/personagem_bolha.tscn" id="1_ixvv6"]
-[ext_resource type="PackedScene" uid="uid://cfr8cdram270l" path="res://cenas/npc/bolha_pessoa.tscn" id="3_4f82t"]
 [ext_resource type="PackedScene" uid="uid://cav6ujhuni7ew" path="res://cenas/obstaculos/turbina.tscn" id="4_6g7sh"]
 [ext_resource type="PackedScene" uid="uid://vplfpvurixvh" path="res://cenas/npc/bolha_npc.tscn" id="4_7pj8c"]
 [ext_resource type="PackedScene" uid="uid://bolx6l6h51p7x" path="res://cursor.tscn" id="6_75wsm"]
-[ext_resource type="PackedScene" uid="uid://n7bkhn2okikk" path="res://cenas/obstaculos/espinho.tscn" id="7_t067j"]
+[ext_resource type="PackedScene" uid="uid://dfbuqoito5rp7" path="res://cenas/bg/bg_predio.tscn" id="7_0aelm"]
+[ext_resource type="PackedScene" uid="uid://dr370iy07uu3w" path="res://cenas/obstaculos/espinho.tscn" id="7_t067j"]
+[ext_resource type="PackedScene" uid="uid://cqv8yww6l4lvx" path="res://cenas/bg/prédio_bg_azul.tscn" id="8_cgg6l"]
+[ext_resource type="Texture2D" uid="uid://7l8b6uc5d56d" path="res://assets/bg/bg_sky_0.png" id="9_n3jdo"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ybxbv"]
 
@@ -14,9 +16,11 @@
 size = Vector2(153, 97)
 
 [node name="Teste" type="Node2D"]
+position = Vector2(2, 0)
 script = ExtResource("1_6h5q8")
 
 [node name="Corpo" parent="." instance=ExtResource("1_ixvv6")]
+top_level = true
 position = Vector2(592, 288)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -55,9 +59,6 @@ texture = SubResource("PlaceholderTexture2D_ybxbv")
 position = Vector2(53.5, 31.5)
 shape = SubResource("RectangleShape2D_lu5ub")
 
-[node name="Area_Bolha" parent="." instance=ExtResource("3_4f82t")]
-position = Vector2(178, 301)
-
 [node name="TextEdit" type="TextEdit" parent="."]
 offset_left = 1031.0
 offset_top = 3.0
@@ -65,10 +66,12 @@ offset_right = 1130.0
 offset_bottom = 101.0
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("4_6g7sh")]
+top_level = true
 position = Vector2(907, 219)
 wind_force = 2.5
 
 [node name="Area2D" parent="." instance=ExtResource("4_7pj8c")]
+top_level = true
 position = Vector2(354, 467)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_75wsm")]
@@ -76,5 +79,23 @@ position = Vector2(354, 467)
 [node name="Area2D2" parent="." instance=ExtResource("4_7pj8c")]
 position = Vector2(346, 116)
 
-[node name="Area2D3" parent="." instance=ExtResource("7_t067j")]
+[node name="Espinho área" parent="." instance=ExtResource("7_t067j")]
+top_level = true
 position = Vector2(679, 788)
+
+[node name="Prédio_bg_cinza" parent="." instance=ExtResource("7_0aelm")]
+position = Vector2(1647, 551)
+
+[node name="Prédio_Bg_azul" parent="." instance=ExtResource("8_cgg6l")]
+position = Vector2(1104, 548)
+
+[node name="Predio_bg_cinza" parent="." instance=ExtResource("7_0aelm")]
+position = Vector2(565, 541)
+
+[node name="Prédio_Bg_azul2" parent="." instance=ExtResource("8_cgg6l")]
+position = Vector2(18, 538)
+
+[node name="BgSky0" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(952, 538)
+texture = ExtResource("9_n3jdo")

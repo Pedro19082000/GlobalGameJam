@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjssx7caxoa8g"]
+
+[ext_resource type="Texture2D" uid="uid://7l8b6uc5d56d" path="res://assets/bg/bg_sky_0.png" id="1_fodmx"]
+
+[node name="Céu" type="Sprite2D"]
+texture = ExtResource("1_fodmx")

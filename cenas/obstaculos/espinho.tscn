@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://n7bkhn2okikk"]
+[gd_scene load_steps=3 format=3 uid="uid://dr370iy07uu3w"]
 
 [ext_resource type="Script" path="res://scripts/espinhos.gd" id="1_2eoi0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8qsu"]
 size = Vector2(916, 185)
 
-[node name="Area2D" type="Area2D"]
+[node name="Espinho_Area" type="Area2D"]
 script = ExtResource("1_2eoi0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
