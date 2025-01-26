@@ -23,7 +23,7 @@ func _process(delta: float):
 	
 
 func diminuir():
-	if $Sprite2D.scale == Vector2(1,1):
+	if $Bolha.scale == Vector2(1,1):
 		return
 	$CollisionShape2D.scale = Vector2(-1, -1) + $CollisionShape2D.scale 
 	$Raio_da_bolha.scale = Vector2(-0.5,-0.5) + $Raio_da_bolha.scale 
