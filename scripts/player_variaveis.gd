@@ -10,4 +10,10 @@ var pausado = false
 
 
 
-var coords = 0
+var coords = Vector2(0, 0)
+
+func resetar():
+	pausado = false
+	Engine.time_scale = 1
+	fase = 1
+	pessoas = 0

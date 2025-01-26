@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0iab7xkeqctc"]
+
+[ext_resource type="Texture2D" uid="uid://bsx1lkg4g3al5" path="res://ui_counter.png" id="1_xkpyl"]
+[ext_resource type="FontFile" uid="uid://oft7knyp2q73" path="res://MotionControl-Bold.otf" id="2_ott0b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ypk2p"]
+texture = ExtResource("1_xkpyl")
+
+[node name="Contador" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 161.0
+offset_bottom = 175.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ypk2p")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 44.0
+offset_right = 355.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("2_ott0b")
+theme_override_font_sizes/font_size = 100
+text = "0/2"
+horizontal_alignment = 1
+vertical_alignment = 1

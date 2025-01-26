@@ -21,3 +21,8 @@ func pauseMenu():
 		Engine.time_scale = 0
 	PlayerVariaveis.pausado = !PlayerVariaveis.pausado
 	
+
+
+func _on_quit_pressed():
+	get_tree().change_scene_to_file("res://menu.tscn")
+	PlayerVariaveis.resetar()
