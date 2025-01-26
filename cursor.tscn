@@ -9,7 +9,7 @@ script = ExtResource("1_idog6")
 empty_cursor = ExtResource("2_eioc7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(47.2854, 40.7993)
+position = Vector2(-264, -189)
 rotation = 0.440381
 scale = Vector2(0.0704428, 0.0726443)
 texture = ExtResource("3_70jwt")

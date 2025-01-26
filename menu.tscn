@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpwf6qm1shcfv"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_dqjd0"]
+[ext_resource type="Texture2D" uid="uid://c0guunlsdpinu" path="res://Captura de tela 2025-01-26 112833.png" id="2_5svty"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iexv6"]
+texture = ExtResource("2_5svty")
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -40.0
+offset_right = 41.0
+grow_vertical = 0
+scale = Vector2(1.44, 1)
+script = ExtResource("1_dqjd0")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1053.0
+offset_right = 1299.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_iexv6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -230.0
+offset_right = 157.0
+grow_vertical = 0
+
+[node name="startButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "start"
+
+[node name="optionsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "options"
+
+[node name="quitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+offset_left = 45.8333
+offset_top = -976.0
+offset_right = 292.833
+offset_bottom = -765.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "AHIRU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/startButton" to="." method="_on_start_button_pressed"]

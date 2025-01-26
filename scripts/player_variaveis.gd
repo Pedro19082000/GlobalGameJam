@@ -6,6 +6,8 @@ var pessoas_fase = 0
 var fase = 0
 var vida = true
 
+var pausado = false
 
 
-var coords
+
+var coords = 0
