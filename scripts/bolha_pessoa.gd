@@ -6,7 +6,7 @@ func _ready():
 	connect("body_entered", on_body_entered)
 	var rng = RandomNumberGenerator.new()
 	
-	var numero = rng.randi_range(1, 5)
+	var numero = rng.randi_range(1, 7)
 	var filename = str("res://assets/characters/npcs/npc_", numero ,".png")
 	var textura = load(filename)
 		

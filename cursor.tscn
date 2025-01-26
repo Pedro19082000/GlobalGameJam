@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://cursor.gd" id="1_idog6"]
 [ext_resource type="Texture2D" uid="uid://bsufcjngmn3a2" path="res://empty.png" id="2_eioc7"]
-[ext_resource type="Texture2D" uid="uid://b1mcs8261n8sq" path="res://assets/cursor/massa.png" id="3_70jwt"]
+[ext_resource type="Texture2D" uid="uid://c7i601lpfk24g" path="res://assets/cursor/massav2.png" id="3_1yv56"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_idog6")
@@ -12,6 +12,6 @@ empty_cursor = ExtResource("2_eioc7")
 position = Vector2(-264, -189)
 rotation = 0.440381
 scale = Vector2(0.0704428, 0.0726443)
-texture = ExtResource("3_70jwt")
+texture = ExtResource("3_1yv56")
 offset = Vector2(528.65, 148.665)
 metadata/_edit_group_ = true

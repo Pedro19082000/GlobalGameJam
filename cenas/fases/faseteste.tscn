@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=4 uid="uid://bfp457jewlmj7"]
+[gd_scene load_steps=27 format=4 uid="uid://bfp457jewlmj7"]
 
 [ext_resource type="Script" path="res://scripts/fases/faseteste.gd" id="1_dg1rg"]
 [ext_resource type="PackedScene" uid="uid://dfbuqoito5rp7" path="res://cenas/bg/bg_predio.tscn" id="2_dbulr"]
+[ext_resource type="AudioStream" uid="uid://d1cg4belwfegg" path="res://assets/musica/Musica de Fase 1 (B-1).wav" id="2_vfe4v"]
 [ext_resource type="Texture2D" uid="uid://cllae6sl0p7ry" path="res://assets/bg/bg_water_0.png" id="2_yfs77"]
 [ext_resource type="PackedScene" uid="uid://cqv8yww6l4lvx" path="res://cenas/bg/prédio_bg_azul.tscn" id="3_7f287"]
 [ext_resource type="PackedScene" uid="uid://bjssx7caxoa8g" path="res://cenas/bg/céu.tscn" id="4_5q43u"]
@@ -15,6 +16,9 @@
 [ext_resource type="Script" path="res://scripts/espinho.gd" id="14_a47b5"]
 [ext_resource type="PackedScene" uid="uid://cav6ujhuni7ew" path="res://cenas/obstaculos/turbina.tscn" id="15_5j25b"]
 [ext_resource type="PackedScene" uid="uid://vplfpvurixvh" path="res://cenas/npc/bolha_npc.tscn" id="15_thnc5"]
+[ext_resource type="PackedScene" uid="uid://bolx6l6h51p7x" path="res://cursor.tscn" id="16_012rq"]
+[ext_resource type="Script" path="res://scripts/saida_fase.gd" id="16_ru5xb"]
+[ext_resource type="PackedScene" uid="uid://bdjntb4hhx1l2" path="res://pause.tscn" id="17_76o7v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujqjx"]
 size = Vector2(499.5, 1032.5)
@@ -154,8 +158,22 @@ size = Vector2(1216, 88)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnjps"]
 size = Vector2(98.5, 342.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_to6nx"]
+size = Vector2(142, 151.75)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_dg1rg")
+
+[node name="MusicaDeFase1(b-1)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vfe4v")
+autoplay = true
+
+[node name="pause" parent="." instance=ExtResource("17_76o7v")]
+z_index = 50
+offset_left = 845.0
+offset_top = 470.0
+offset_right = 885.0
+offset_bottom = 510.0
 
 [node name="VinhaPraCima3" type="Sprite2D" parent="."]
 z_index = 7
@@ -443,6 +461,17 @@ position = Vector2(784, 248)
 [node name="Bolha_npc3" parent="." instance=ExtResource("15_thnc5")]
 position = Vector2(1640, 240)
 
+[node name="CanvasLayer" parent="." instance=ExtResource("16_012rq")]
+
+[node name="Area2D4" type="Area2D" parent="."]
+position = Vector2(-3, -10)
+script = ExtResource("16_ru5xb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(1920, 258)
+shape = SubResource("RectangleShape2D_to6nx")
+
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]

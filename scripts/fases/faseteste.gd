@@ -5,3 +5,4 @@ extends Node2D
 func _ready() -> void:
 	PlayerVariaveis.fase = 1
 	PlayerVariaveis
+	

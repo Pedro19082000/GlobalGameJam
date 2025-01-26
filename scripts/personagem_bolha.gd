@@ -23,11 +23,13 @@ func _process(delta: float):
 	
 
 func diminuir():
-	if $Bolha.scale == Vector2(1,1):
+	if $Bolha.scale + Vector2(-0.04, -0.04) < Vector2(0.071, 0.071):
+		$CollisionShape2D.scale = Vector2(1, 1)
+		$Bolha.scale = Vector2(0.071, 0.071)
 		return
-	$CollisionShape2D.scale = Vector2(-1, -1) + $CollisionShape2D.scale 
-	$Raio_da_bolha.scale = Vector2(-0.5,-0.5) + $Raio_da_bolha.scale 
-	$Bolha.scale =  Vector2(-1, -1) + $Bolha.scale
+	$CollisionShape2D.scale = Vector2(-0.1, -0.1) + $CollisionShape2D.scale 
+	#$Raio_da_bolha.scale = Vector2(-0.5,-0.5) + $Raio_da_bolha.scale 
+	$Bolha.scale =  Vector2(-0.04, -0.04) + $Bolha.scale
 	
 	pessoas_incial = PlayerVariaveis.pessoas
 

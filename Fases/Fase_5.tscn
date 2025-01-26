@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=4 uid="uid://dvu636x2a11b0"]
+[gd_scene load_steps=22 format=4 uid="uid://dvu636x2a11b0"]
 
 [ext_resource type="Texture2D" uid="uid://7l8b6uc5d56d" path="res://assets/bg/bg_sky_0.png" id="1_s8p10"]
+[ext_resource type="AudioStream" uid="uid://d1cg4belwfegg" path="res://assets/musica/Musica de Fase 1 (B-1).wav" id="1_todps"]
 [ext_resource type="PackedScene" uid="uid://dfbuqoito5rp7" path="res://cenas/bg/bg_predio.tscn" id="1_xb4ge"]
 [ext_resource type="Texture2D" uid="uid://d0ljim7l6i1lo" path="res://assets/tile/tile_builoding_0.png" id="2_3125k"]
 [ext_resource type="Texture2D" uid="uid://co8sexwnq6kot" path="res://assets/tile/tile_border_brick_0.png" id="3_kt626"]
@@ -11,6 +12,9 @@
 [ext_resource type="Script" path="res://scripts/espinho.gd" id="8_gbdg4"]
 [ext_resource type="Texture2D" uid="uid://cllae6sl0p7ry" path="res://assets/bg/bg_water_0.png" id="10_61v6c"]
 [ext_resource type="PackedScene" uid="uid://cqv8yww6l4lvx" path="res://cenas/bg/prédio_bg_azul.tscn" id="11_dluyo"]
+[ext_resource type="PackedScene" uid="uid://bolx6l6h51p7x" path="res://cursor.tscn" id="12_3taef"]
+[ext_resource type="Script" path="res://scripts/saida_fase.gd" id="12_hkxs8"]
+[ext_resource type="PackedScene" uid="uid://bdjntb4hhx1l2" path="res://pause.tscn" id="13_fwiut"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frhqq"]
 size = Vector2(499.5, 1032.5)
@@ -147,7 +151,22 @@ sources/1 = SubResource("TileSetAtlasSource_45i6o")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5p2kn"]
 size = Vector2(40.0161, 421.034)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6x8x"]
+size = Vector2(142, 334)
+
 [node name="Node2D" type="Node2D"]
+
+[node name="MusicaDeFase1(b-1)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_todps")
+autoplay = true
+
+[node name="pause" parent="." instance=ExtResource("13_fwiut")]
+visible = true
+z_index = 50
+offset_left = 877.0
+offset_top = 480.0
+offset_right = 917.0
+offset_bottom = 520.0
 
 [node name="Predio_bg_cinza5" parent="." instance=ExtResource("1_xb4ge")]
 z_index = -10
@@ -272,9 +291,20 @@ z_index = -10
 position = Vector2(320, 832)
 scale = Vector2(1.10639, 1)
 
+[node name="CanvasLayer" parent="." instance=ExtResource("12_3taef")]
+
 [node name="Predio_bg_cinza4" parent="." instance=ExtResource("1_xb4ge")]
 z_index = -10
 position = Vector2(1600, 784)
 scale = Vector2(1.10639, 1)
 
+[node name="Area2D4" type="Area2D" parent="."]
+position = Vector2(-27, -12)
+script = ExtResource("12_hkxs8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(1922, 718)
+shape = SubResource("RectangleShape2D_s6x8x")
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]

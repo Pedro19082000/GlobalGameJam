@@ -1,17 +1,21 @@
-[gd_scene load_steps=14 format=4 uid="uid://n8gyvyq63nbj"]
+[gd_scene load_steps=19 format=4 uid="uid://n8gyvyq63nbj"]
 
-[ext_resource type="Texture2D" uid="uid://7l8b6uc5d56d" path="res://assets/bg/bg_sky_0.png" id="1_813my"]
-[ext_resource type="Texture2D" uid="uid://co8sexwnq6kot" path="res://assets/tile/tile_border_brick_0.png" id="2_1q83a"]
-[ext_resource type="Texture2D" uid="uid://cx6j5ap4lci48" path="res://assets/tile/tile_border_grade_0.png" id="3_13xo3"]
-[ext_resource type="Texture2D" uid="uid://d0ljim7l6i1lo" path="res://assets/tile/tile_builoding_0.png" id="4_edir5"]
-[ext_resource type="PackedScene" uid="uid://dropxapjavxpn" path="res://cenas/player/personagem_bolha.tscn" id="5_l7ppe"]
-[ext_resource type="PackedScene" uid="uid://vplfpvurixvh" path="res://cenas/npc/bolha_npc.tscn" id="6_p5t65"]
-[ext_resource type="Texture2D" uid="uid://cddlbpj65fp4s" path="res://assets/assets-20250125T225925Z-001/assets/bg_water_0.png" id="7_u1dcf"]
-[ext_resource type="PackedScene" uid="uid://dfbuqoito5rp7" path="res://cenas/bg/bg_predio.tscn" id="8_71tky"]
-[ext_resource type="PackedScene" uid="uid://cqv8yww6l4lvx" path="res://cenas/bg/prédio_bg_azul.tscn" id="9_xt245"]
+[ext_resource type="Texture2D" uid="uid://7l8b6uc5d56d" path="res://assets/bg/bg_sky_0.png" id="1_ldwp1"]
+[ext_resource type="AudioStream" uid="uid://bj8nr4jrhfgcl" path="res://assets/musica/Musica de Fase 2 (D-1).wav" id="1_o5kyb"]
+[ext_resource type="Texture2D" uid="uid://co8sexwnq6kot" path="res://assets/tile/tile_border_brick_0.png" id="2_m8ngv"]
+[ext_resource type="Texture2D" uid="uid://cx6j5ap4lci48" path="res://assets/tile/tile_border_grade_0.png" id="3_xlukc"]
+[ext_resource type="Texture2D" uid="uid://d0ljim7l6i1lo" path="res://assets/tile/tile_builoding_0.png" id="4_vwxja"]
+[ext_resource type="PackedScene" uid="uid://dropxapjavxpn" path="res://cenas/player/personagem_bolha.tscn" id="5_xlcpl"]
+[ext_resource type="PackedScene" uid="uid://vplfpvurixvh" path="res://cenas/npc/bolha_npc.tscn" id="6_378mh"]
+[ext_resource type="Texture2D" uid="uid://cddlbpj65fp4s" path="res://assets/assets-20250125T225925Z-001/assets/bg_water_0.png" id="7_t4glg"]
+[ext_resource type="PackedScene" uid="uid://dfbuqoito5rp7" path="res://cenas/bg/bg_predio.tscn" id="8_g0opk"]
+[ext_resource type="PackedScene" uid="uid://cqv8yww6l4lvx" path="res://cenas/bg/prédio_bg_azul.tscn" id="9_nlmma"]
+[ext_resource type="Script" path="res://scripts/saida_fase.gd" id="10_hb6go"]
+[ext_resource type="PackedScene" uid="uid://bolx6l6h51p7x" path="res://cursor.tscn" id="10_k3nq2"]
+[ext_resource type="PackedScene" uid="uid://bdjntb4hhx1l2" path="res://pause.tscn" id="11_q768i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qqmcy"]
-texture = ExtResource("2_1q83a")
+texture = ExtResource("2_m8ngv")
 texture_region_size = Vector2i(20, 20)
 6:0/0 = 0
 6:1/0 = 0
@@ -72,7 +76,7 @@ texture_region_size = Vector2i(20, 20)
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30, -30, 30, -30, 30, -30, 30, 30, -30, 30, -30, 30)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vu64c"]
-texture = ExtResource("3_13xo3")
+texture = ExtResource("3_xlukc")
 texture_region_size = Vector2i(20, 20)
 6:0/0 = 0
 6:1/0 = 0
@@ -142,12 +146,26 @@ sources/1 = SubResource("TileSetAtlasSource_vu64c")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djpdj"]
 size = Vector2(499.5, 1032.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivmyo"]
+size = Vector2(142, 334)
+
 [node name="Fase1_1" type="Node2D"]
+
+[node name="MusicaDeFase2(d-1)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_o5kyb")
+autoplay = true
+
+[node name="pause" parent="." instance=ExtResource("11_q768i")]
+z_index = 50
+offset_left = 858.0
+offset_top = 515.0
+offset_right = 898.0
+offset_bottom = 555.0
 
 [node name="BgSky0" type="Sprite2D" parent="."]
 z_index = -120
 position = Vector2(960, 544)
-texture = ExtResource("1_813my")
+texture = ExtResource("1_ldwp1")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 1
@@ -164,38 +182,50 @@ collision_mask = 2
 
 [node name="TileBuiloding0" type="Sprite2D" parent="TileMapLayer/StaticBody2D"]
 z_index = 2
-texture = ExtResource("4_edir5")
+texture = ExtResource("4_vwxja")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_djpdj")
 
-[node name="bolha_personagem" parent="." instance=ExtResource("5_l7ppe")]
+[node name="bolha_personagem" parent="." instance=ExtResource("5_xlcpl")]
 z_index = 10
 position = Vector2(120, 168)
 
-[node name="Area2D2" parent="." instance=ExtResource("6_p5t65")]
+[node name="Area2D2" parent="." instance=ExtResource("6_378mh")]
 z_index = 3
 position = Vector2(1248, 888)
 
-[node name="Area2D3" parent="." instance=ExtResource("6_p5t65")]
+[node name="Area2D3" parent="." instance=ExtResource("6_378mh")]
 z_index = 3
 position = Vector2(1240, 456)
 
 [node name="BgWater0" type="Sprite2D" parent="."]
 position = Vector2(904, 992)
-texture = ExtResource("7_u1dcf")
+texture = ExtResource("7_t4glg")
 
-[node name="Predio_bg_cinza" parent="." instance=ExtResource("8_71tky")]
+[node name="Predio_bg_cinza" parent="." instance=ExtResource("8_g0opk")]
 z_index = -120
 position = Vector2(296, 632)
 scale = Vector2(1.05185, 1)
 
-[node name="Prédio_Bg_azul" parent="." instance=ExtResource("9_xt245")]
+[node name="Prédio_Bg_azul" parent="." instance=ExtResource("9_nlmma")]
 z_index = -9
 position = Vector2(904, 928)
 
-[node name="Predio_bg_cinza2" parent="." instance=ExtResource("8_71tky")]
+[node name="Predio_bg_cinza2" parent="." instance=ExtResource("8_g0opk")]
 z_index = -120
 position = Vector2(1584, 608)
 scale = Vector2(1.05185, 1)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("10_k3nq2")]
+
+[node name="Area2D4" type="Area2D" parent="."]
+position = Vector2(-27, -12)
+script = ExtResource("10_hb6go")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(1918, 698)
+shape = SubResource("RectangleShape2D_ivmyo")
+
+[connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]

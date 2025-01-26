@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://vplfpvurixvh" path="res://cenas/npc/bolha_npc.tscn" id="4_7pj8c"]
 [ext_resource type="PackedScene" uid="uid://bolx6l6h51p7x" path="res://cursor.tscn" id="6_75wsm"]
 [ext_resource type="PackedScene" uid="uid://dfbuqoito5rp7" path="res://cenas/bg/bg_predio.tscn" id="7_0aelm"]
-[ext_resource type="PackedScene" path="res://cenas/obstaculos/espinho.tscn" id="7_t067j"]
+[ext_resource type="PackedScene" uid="uid://n7bkhn2okikk" path="res://cenas/obstaculos/espinho.tscn" id="7_t067j"]
 [ext_resource type="PackedScene" uid="uid://cqv8yww6l4lvx" path="res://cenas/bg/prédio_bg_azul.tscn" id="8_cgg6l"]
 [ext_resource type="Texture2D" uid="uid://7l8b6uc5d56d" path="res://assets/bg/bg_sky_0.png" id="9_n3jdo"]
 

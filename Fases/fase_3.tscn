@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dxvn07di8aydu"]
+[gd_scene load_steps=19 format=4 uid="uid://c4waadx7kb4sp"]
 
 [ext_resource type="Texture2D" uid="uid://7l8b6uc5d56d" path="res://assets/bg/bg_sky_0.png" id="1_4bc4v"]
 [ext_resource type="Texture2D" uid="uid://co8sexwnq6kot" path="res://assets/tile/tile_border_brick_0.png" id="2_dg5qb"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cllae6sl0p7ry" path="res://assets/bg/bg_water_0.png" id="8_7wo1t"]
 [ext_resource type="PackedScene" uid="uid://dfbuqoito5rp7" path="res://cenas/bg/bg_predio.tscn" id="9_eawwk"]
 [ext_resource type="PackedScene" uid="uid://cqv8yww6l4lvx" path="res://cenas/bg/prédio_bg_azul.tscn" id="10_tntx5"]
+[ext_resource type="Script" path="res://scripts/saida_fase.gd" id="11_mr3ic"]
+[ext_resource type="PackedScene" uid="uid://bdjntb4hhx1l2" path="res://pause.tscn" id="11_wsim1"]
+[ext_resource type="PackedScene" uid="uid://bolx6l6h51p7x" path="res://cursor.tscn" id="12_nqja2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7a78"]
 texture = ExtResource("2_dg5qb")
@@ -143,6 +146,9 @@ sources/1 = SubResource("TileSetAtlasSource_i8nbj")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cm4vv"]
 size = Vector2(499.5, 1032.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rivxr"]
+size = Vector2(142, 334)
+
 [node name="FAse 2" type="Node2D"]
 
 [node name="BgSky0" type="Sprite2D" parent="."]
@@ -217,3 +223,21 @@ position = Vector2(512, -184)
 z_index = -10
 position = Vector2(1784, 656)
 scale = Vector2(1.10639, 1)
+
+[node name="pause" parent="." instance=ExtResource("11_wsim1")]
+offset_left = 976.0
+offset_top = 479.0
+offset_right = 1016.0
+offset_bottom = 519.0
+
+[node name="CanvasLayer" parent="." instance=ExtResource("12_nqja2")]
+
+[node name="Area2D4" type="Area2D" parent="."]
+position = Vector2(-27, -12)
+script = ExtResource("11_mr3ic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(1920, 242)
+shape = SubResource("RectangleShape2D_rivxr")
+
+[connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]

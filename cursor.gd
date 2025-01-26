@@ -20,8 +20,6 @@ func _process(delta):
 		#print(angulo)
 		#var angle = direction.angle()
 		
-		Input.set_custom_mouse_cursor(null)
-		
 		
 		$Sprite2D.rotation = -angulo + -300
 
