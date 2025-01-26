@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="gamejam2025"
-run/main_scene="res://cenas/fases/teste.tscn"
+run/main_scene="res://cenas/fases/faseteste.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
 [autoload]
@@ -23,6 +23,7 @@ PlayerVariaveis="*res://scripts/player_variaveis.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 
 [global_group]

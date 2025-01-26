@@ -8,11 +8,8 @@ func _ready():
 	
 	var numero = rng.randi_range(1, 5)
 	var filename = str("res://assets/characters/npcs/npc_", numero ,".png")
-	print(filename)
 	var textura = load(filename)
-	
-	print(textura)
-	
+		
 	$Personagem.texture = textura
 		
 func on_body_entered(body : RigidBody2D) -> void:

@@ -1,15 +1,18 @@
 extends StaticBody2D
 
 @export var wind_force: float = 5
-@export var distancia = 5
 
-@onready var area = $Area2D
+@export var area_vento = 0
 
 var player = 0
 
 # Called when the node enters the scene tree for the first time.
 
 var entrou = false	
+
+
+func _ready() -> void:
+	$Area2D/vento_area.shape.size = Vector2(160, area_vento)
 
 
 func _process(delta: float) -> void:

@@ -23,7 +23,7 @@ func _process(delta: float):
 	
 
 func diminuir():
-	if $Bolha.scale == Vector2(1,1):
+	if $Sprite2D.scale == Vector2(1,1):
 		return
 	$CollisionShape2D.scale = Vector2(-1, -1) + $CollisionShape2D.scale 
 	$Raio_da_bolha.scale = Vector2(-0.5,-0.5) + $Raio_da_bolha.scale 
@@ -33,9 +33,9 @@ func diminuir():
 
 
 func aumentar():
-	$CollisionShape2D.scale = $CollisionShape2D.scale + Vector2(1, 1)
-	$Raio_da_bolha.scale = $Raio_da_bolha.scale + Vector2(0.5,0.5)
-	$Bolha.scale = $Bolha.scale + Vector2(1, 1)
+	$CollisionShape2D.scale = $CollisionShape2D.scale + Vector2(0.1, 0.1)
+	#$Raio_da_bolha.scale = $Raio_da_bolha.scale + Vector2(0.5,0.5)
+	$Bolha.scale = $Bolha.scale + Vector2(0.04, 0.04)
 func assoprar():
 	var mouse = get_viewport( ).get_mouse_position()
 	var player = $".".position
