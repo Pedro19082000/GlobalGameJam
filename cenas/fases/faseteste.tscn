@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://b13sfctjyg45t"]
+[gd_scene load_steps=18 format=4 uid="uid://bfp457jewlmj7"]
 
 [ext_resource type="Script" path="res://scripts/fases/faseteste.gd" id="1_dg1rg"]
 [ext_resource type="PackedScene" uid="uid://dfbuqoito5rp7" path="res://cenas/bg/bg_predio.tscn" id="2_dbulr"]
@@ -17,7 +17,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujqjx"]
 size = Vector2(499.5, 1032.5)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hegon"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fkj8t"]
 texture = ExtResource("6_2u0et")
 texture_region_size = Vector2i(20, 20)
 6:0/0 = 0
@@ -78,7 +78,7 @@ texture_region_size = Vector2i(20, 20)
 3:0/0 = 0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30, -30, 30, -30, 30, -30, 30, 30, -30, 30, -30, 30)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnthd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dr68i"]
 texture = ExtResource("12_xibpp")
 texture_region_size = Vector2i(20, 20)
 6:0/0 = 0
@@ -143,8 +143,8 @@ texture_region_size = Vector2i(20, 20)
 tile_size = Vector2i(60, 60)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
-sources/0 = SubResource("TileSetAtlasSource_hegon")
-sources/1 = SubResource("TileSetAtlasSource_pnthd")
+sources/0 = SubResource("TileSetAtlasSource_fkj8t")
+sources/1 = SubResource("TileSetAtlasSource_dr68i")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_dg1rg")

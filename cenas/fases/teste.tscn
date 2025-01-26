@@ -48,7 +48,7 @@ position = Vector2(53.5, 31.5)
 shape = SubResource("RectangleShape2D_lu5ub")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="StaticBody2D"]
-position = Vector2(-81, 581)
+position = Vector2(-5, 555)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/StaticBody2D2"]
 position = Vector2(52.625, 31.625)
@@ -78,7 +78,7 @@ position = Vector2(354, 467)
 [node name="CanvasLayer" parent="." instance=ExtResource("6_75wsm")]
 
 [node name="Area2D2" parent="." instance=ExtResource("4_7pj8c")]
-position = Vector2(346, 116)
+position = Vector2(356, 80)
 
 [node name="Espinho área" parent="." instance=ExtResource("7_t067j")]
 top_level = true
