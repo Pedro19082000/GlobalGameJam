@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bfp457jewlmj7"]
+[gd_scene load_steps=22 format=4 uid="uid://bfp457jewlmj7"]
 
 [ext_resource type="Script" path="res://scripts/fases/faseteste.gd" id="1_dg1rg"]
 [ext_resource type="PackedScene" uid="uid://dfbuqoito5rp7" path="res://cenas/bg/bg_predio.tscn" id="2_dbulr"]
@@ -9,10 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://d0ljim7l6i1lo" path="res://assets/tile/tile_builoding_0.png" id="7_aug44"]
 [ext_resource type="Texture2D" uid="uid://m6m5485d2l34" path="res://assets/tile/tile_vine_A_0.png" id="9_sggf5"]
 [ext_resource type="Texture2D" uid="uid://dkhbbbw2mgllt" path="res://assets/vinha pra direita.png" id="9_wb8lc"]
-[ext_resource type="Texture2D" uid="uid://cq23s6d6jjs04" path="res://assets/obstaculos/ventilador.png" id="10_5eqdk"]
 [ext_resource type="Texture2D" uid="uid://brbnuy4u51bf5" path="res://assets/vinha pra cima.png" id="11_q7uy1"]
 [ext_resource type="Texture2D" uid="uid://cx6j5ap4lci48" path="res://assets/tile/tile_border_grade_0.png" id="12_xibpp"]
 [ext_resource type="PackedScene" uid="uid://dropxapjavxpn" path="res://cenas/player/personagem_bolha.tscn" id="13_6266l"]
+[ext_resource type="Script" path="res://scripts/espinho.gd" id="14_a47b5"]
+[ext_resource type="PackedScene" uid="uid://cav6ujhuni7ew" path="res://cenas/obstaculos/turbina.tscn" id="15_5j25b"]
+[ext_resource type="PackedScene" uid="uid://vplfpvurixvh" path="res://cenas/npc/bolha_npc.tscn" id="15_thnc5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujqjx"]
 size = Vector2(499.5, 1032.5)
@@ -146,6 +148,12 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_fkj8t")
 sources/1 = SubResource("TileSetAtlasSource_dr68i")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlvef"]
+size = Vector2(1216, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnjps"]
+size = Vector2(98.5, 342.5)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_dg1rg")
 
@@ -193,24 +201,6 @@ texture = ExtResource("7_aug44")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_ujqjx")
-
-[node name="Ventilador" type="Sprite2D" parent="."]
-z_index = 4
-position = Vector2(1784, 944)
-rotation = 1.5708
-scale = Vector2(1.58205, 1.29102)
-texture = ExtResource("10_5eqdk")
-
-[node name="Ventilador2" type="Sprite2D" parent="."]
-z_index = 3
-position = Vector2(1632, 568)
-scale = Vector2(1.65, 1.58333)
-texture = ExtResource("10_5eqdk")
-
-[node name="Ventilador3" type="Sprite2D" parent="."]
-position = Vector2(1201, 159)
-scale = Vector2(1.98333, 1.75)
-texture = ExtResource("10_5eqdk")
 
 [node name="VinhaPraCima" type="Sprite2D" parent="."]
 z_index = 3
@@ -397,4 +387,62 @@ tile_set = SubResource("TileSet_jiw7p")
 
 [node name="bolha_personagem" parent="." instance=ExtResource("13_6266l")]
 position = Vector2(247, 284)
-collision_layer = 2
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(480, 827.25)
+script = ExtResource("14_a47b5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(616, 208.75)
+shape = SubResource("RectangleShape2D_vlvef")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(48, -32)
+script = ExtResource("14_a47b5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(432, 859.25)
+shape = SubResource("RectangleShape2D_hnjps")
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2(520, -88)
+scale = Vector2(0.431934, 0.903782)
+script = ExtResource("14_a47b5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(616, 208.75)
+shape = SubResource("RectangleShape2D_vlvef")
+
+[node name="Turbina" parent="." instance=ExtResource("15_5j25b")]
+top_level = true
+position = Vector2(1208, 40)
+rotation = 6.28319
+scale = Vector2(1.79981, 2.9617)
+area_vento = 250
+
+[node name="Turbina" parent="Turbina" instance=ExtResource("15_5j25b")]
+top_level = true
+position = Vector2(1864, 936)
+rotation = 1.5708
+scale = Vector2(1.79981, 2.9617)
+area_vento = 250
+
+[node name="Turbina2" parent="Turbina" instance=ExtResource("15_5j25b")]
+top_level = true
+position = Vector2(1632, 472)
+rotation = 6.28319
+scale = Vector2(1.79981, 2.9617)
+area_vento = 250
+
+[node name="Bolha_npc" parent="." instance=ExtResource("15_thnc5")]
+position = Vector2(760, 688)
+
+[node name="Bolha_npc2" parent="." instance=ExtResource("15_thnc5")]
+position = Vector2(784, 248)
+
+[node name="Bolha_npc3" parent="." instance=ExtResource("15_thnc5")]
+position = Vector2(1640, 240)
+
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]

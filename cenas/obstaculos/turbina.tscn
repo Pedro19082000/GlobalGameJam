@@ -7,7 +7,7 @@
 size = Vector2(160, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xmhl"]
-size = Vector2(160, 144.25)
+size = Vector2(160, 83.25)
 
 [node name="Turbina" type="StaticBody2D"]
 script = ExtResource("1_4epud")
@@ -19,7 +19,7 @@ position = Vector2(1, 144)
 shape = SubResource("RectangleShape2D_16qyx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -36.875)
+position = Vector2(0, -6.375)
 shape = SubResource("RectangleShape2D_3xmhl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
