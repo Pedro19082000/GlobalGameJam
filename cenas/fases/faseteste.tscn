@@ -159,7 +159,7 @@ size = Vector2(1216, 88)
 size = Vector2(98.5, 342.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_to6nx"]
-size = Vector2(142, 151.75)
+size = Vector2(142, 282)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_dg1rg")
@@ -404,7 +404,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAADAAYAAAAAAAEAAAAAAAYAAAAAAAIAAAAAAAY
 tile_set = SubResource("TileSet_jiw7p")
 
 [node name="bolha_personagem" parent="." instance=ExtResource("13_6266l")]
-position = Vector2(247, 284)
+position = Vector2(212, 223)
 
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(480, 827.25)
@@ -468,7 +468,7 @@ position = Vector2(-3, -10)
 script = ExtResource("16_ru5xb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
-position = Vector2(1920, 258)
+position = Vector2(1920, 251)
 shape = SubResource("RectangleShape2D_to6nx")
 
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

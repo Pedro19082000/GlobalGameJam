@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c0iab7xkeqctc"]
 
-[ext_resource type="Texture2D" uid="uid://bsx1lkg4g3al5" path="res://ui_counter.png" id="1_xkpyl"]
+[ext_resource type="Texture2D" uid="uid://bsx1lkg4g3al5" path="res://assets/ui/ui_counter.png" id="1_xkpyl"]
 [ext_resource type="FontFile" uid="uid://oft7knyp2q73" path="res://MotionControl-Bold.otf" id="2_ott0b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ypk2p"]

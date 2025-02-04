@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b5q335dx3t5ep"]
+[gd_scene load_steps=24 format=4 uid="uid://b5q335dx3t5ep"]
 
 [ext_resource type="AudioStream" uid="uid://bj8nr4jrhfgcl" path="res://assets/musica/Musica de Fase 2 (D-1).wav" id="1_0sucg"]
 [ext_resource type="Texture2D" uid="uid://7l8b6uc5d56d" path="res://assets/bg/bg_sky_0.png" id="1_ujhf0"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://scripts/saida_fase.gd" id="13_63jo7"]
 [ext_resource type="PackedScene" uid="uid://bdjntb4hhx1l2" path="res://pause.tscn" id="13_t21an"]
 [ext_resource type="PackedScene" uid="uid://bolx6l6h51p7x" path="res://cursor.tscn" id="13_tw2ci"]
+[ext_resource type="PackedScene" uid="uid://c1s3csmmqv862" path="res://cenas/player/player_ui.tscn" id="17_mhdhg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2bxm"]
 texture = ExtResource("2_2a8br")
@@ -320,6 +321,8 @@ script = ExtResource("13_63jo7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
 position = Vector2(1943, 854)
 shape = SubResource("RectangleShape2D_ip7ae")
+
+[node name="player_ui" parent="." instance=ExtResource("17_mhdhg")]
 
 [connection signal="body_entered" from="VinhaPraEsquerda3/VinhaPraEsquerda3/VinhaPraEsquerda3/VinhaPraEsquerda2/Area2D" to="VinhaPraEsquerda3/VinhaPraEsquerda3/VinhaPraEsquerda3/VinhaPraEsquerda2/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]

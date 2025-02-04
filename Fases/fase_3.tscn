@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c4waadx7kb4sp"]
+[gd_scene load_steps=20 format=4 uid="uid://c4waadx7kb4sp"]
 
 [ext_resource type="Texture2D" uid="uid://7l8b6uc5d56d" path="res://assets/bg/bg_sky_0.png" id="1_4bc4v"]
 [ext_resource type="Texture2D" uid="uid://co8sexwnq6kot" path="res://assets/tile/tile_border_brick_0.png" id="2_dg5qb"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scripts/saida_fase.gd" id="11_mr3ic"]
 [ext_resource type="PackedScene" uid="uid://bdjntb4hhx1l2" path="res://pause.tscn" id="11_wsim1"]
 [ext_resource type="PackedScene" uid="uid://bolx6l6h51p7x" path="res://cursor.tscn" id="12_nqja2"]
+[ext_resource type="PackedScene" uid="uid://c1s3csmmqv862" path="res://cenas/player/player_ui.tscn" id="14_sflud"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7a78"]
 texture = ExtResource("2_dg5qb")
@@ -224,12 +225,6 @@ z_index = -10
 position = Vector2(1784, 656)
 scale = Vector2(1.10639, 1)
 
-[node name="pause" parent="." instance=ExtResource("11_wsim1")]
-offset_left = 976.0
-offset_top = 479.0
-offset_right = 1016.0
-offset_bottom = 519.0
-
 [node name="CanvasLayer" parent="." instance=ExtResource("12_nqja2")]
 
 [node name="Area2D4" type="Area2D" parent="."]
@@ -239,5 +234,9 @@ script = ExtResource("11_mr3ic")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
 position = Vector2(1920, 242)
 shape = SubResource("RectangleShape2D_rivxr")
+
+[node name="player_ui" parent="." instance=ExtResource("14_sflud")]
+
+[node name="pause" parent="." instance=ExtResource("11_wsim1")]
 
 [connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]

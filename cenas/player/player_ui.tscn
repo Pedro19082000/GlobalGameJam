@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1s3csmmqv862"]
+
+[ext_resource type="Script" path="res://scripts/player_ui.gd" id="1_dkij4"]
+[ext_resource type="FontFile" uid="uid://oft7knyp2q73" path="res://MotionControl-Bold.otf" id="1_vv0xc"]
+[ext_resource type="Texture2D" uid="uid://bsx1lkg4g3al5" path="res://assets/ui/ui_counter.png" id="1_xer5k"]
+
+[node name="player_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -2.0
+offset_right = -5.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dkij4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+z_index = 10
+layout_mode = 0
+offset_left = 1518.0
+offset_top = 62.0
+offset_right = 1878.0
+offset_bottom = 225.0
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vv0xc")
+theme_override_font_sizes/font_size = 100
+text = "0"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_xer5k")
+stretch_mode = 3

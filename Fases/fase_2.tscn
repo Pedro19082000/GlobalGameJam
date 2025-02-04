@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://n8gyvyq63nbj"]
+[gd_scene load_steps=20 format=4 uid="uid://n8gyvyq63nbj"]
 
 [ext_resource type="Texture2D" uid="uid://7l8b6uc5d56d" path="res://assets/bg/bg_sky_0.png" id="1_ldwp1"]
 [ext_resource type="AudioStream" uid="uid://bj8nr4jrhfgcl" path="res://assets/musica/Musica de Fase 2 (D-1).wav" id="1_o5kyb"]
@@ -7,12 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://d0ljim7l6i1lo" path="res://assets/tile/tile_builoding_0.png" id="4_vwxja"]
 [ext_resource type="PackedScene" uid="uid://dropxapjavxpn" path="res://cenas/player/personagem_bolha.tscn" id="5_xlcpl"]
 [ext_resource type="PackedScene" uid="uid://vplfpvurixvh" path="res://cenas/npc/bolha_npc.tscn" id="6_378mh"]
-[ext_resource type="Texture2D" uid="uid://cddlbpj65fp4s" path="res://assets/assets-20250125T225925Z-001/assets/bg_water_0.png" id="7_t4glg"]
+[ext_resource type="Texture2D" uid="uid://cllae6sl0p7ry" path="res://assets/bg/bg_water_0.png" id="7_t4glg"]
 [ext_resource type="PackedScene" uid="uid://dfbuqoito5rp7" path="res://cenas/bg/bg_predio.tscn" id="8_g0opk"]
 [ext_resource type="PackedScene" uid="uid://cqv8yww6l4lvx" path="res://cenas/bg/prédio_bg_azul.tscn" id="9_nlmma"]
 [ext_resource type="Script" path="res://scripts/saida_fase.gd" id="10_hb6go"]
 [ext_resource type="PackedScene" uid="uid://bolx6l6h51p7x" path="res://cursor.tscn" id="10_k3nq2"]
 [ext_resource type="PackedScene" uid="uid://bdjntb4hhx1l2" path="res://pause.tscn" id="11_q768i"]
+[ext_resource type="PackedScene" uid="uid://c1s3csmmqv862" path="res://cenas/player/player_ui.tscn" id="14_o4eqj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qqmcy"]
 texture = ExtResource("2_m8ngv")
@@ -155,13 +156,6 @@ size = Vector2(142, 334)
 stream = ExtResource("1_o5kyb")
 autoplay = true
 
-[node name="pause" parent="." instance=ExtResource("11_q768i")]
-z_index = 50
-offset_left = 858.0
-offset_top = 515.0
-offset_right = 898.0
-offset_bottom = 555.0
-
 [node name="BgSky0" type="Sprite2D" parent="."]
 z_index = -120
 position = Vector2(960, 544)
@@ -227,5 +221,9 @@ script = ExtResource("10_hb6go")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
 position = Vector2(1918, 698)
 shape = SubResource("RectangleShape2D_ivmyo")
+
+[node name="player_ui" parent="." instance=ExtResource("14_o4eqj")]
+
+[node name="pause" parent="." instance=ExtResource("11_q768i")]
 
 [connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dvu636x2a11b0"]
+[gd_scene load_steps=23 format=4 uid="uid://dvu636x2a11b0"]
 
 [ext_resource type="Texture2D" uid="uid://7l8b6uc5d56d" path="res://assets/bg/bg_sky_0.png" id="1_s8p10"]
 [ext_resource type="AudioStream" uid="uid://d1cg4belwfegg" path="res://assets/musica/Musica de Fase 1 (B-1).wav" id="1_todps"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bolx6l6h51p7x" path="res://cursor.tscn" id="12_3taef"]
 [ext_resource type="Script" path="res://scripts/saida_fase.gd" id="12_hkxs8"]
 [ext_resource type="PackedScene" uid="uid://bdjntb4hhx1l2" path="res://pause.tscn" id="13_fwiut"]
+[ext_resource type="PackedScene" uid="uid://c1s3csmmqv862" path="res://cenas/player/player_ui.tscn" id="16_gbjdk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frhqq"]
 size = Vector2(499.5, 1032.5)
@@ -160,14 +161,6 @@ size = Vector2(142, 334)
 stream = ExtResource("1_todps")
 autoplay = true
 
-[node name="pause" parent="." instance=ExtResource("13_fwiut")]
-visible = true
-z_index = 50
-offset_left = 877.0
-offset_top = 480.0
-offset_right = 917.0
-offset_bottom = 520.0
-
 [node name="Predio_bg_cinza5" parent="." instance=ExtResource("1_xb4ge")]
 z_index = -10
 position = Vector2(712, 680)
@@ -305,6 +298,10 @@ script = ExtResource("12_hkxs8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
 position = Vector2(1922, 718)
 shape = SubResource("RectangleShape2D_s6x8x")
+
+[node name="player_ui" parent="." instance=ExtResource("16_gbjdk")]
+
+[node name="pause" parent="." instance=ExtResource("13_fwiut")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]

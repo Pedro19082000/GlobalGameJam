@@ -3,7 +3,8 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		PlayerVariaveis.pessoas_fase = PlayerVariaveis.pessoas
+		PlayerVariaveis.pessoas_fase += PlayerVariaveis.pessoas
+		PlayerVariaveis.pessoas = 0
 		PlayerVariaveis.fase = PlayerVariaveis.fase + 1
 		var fase = str("res://Fases/fase_", PlayerVariaveis.fase ,".tscn")
 		
